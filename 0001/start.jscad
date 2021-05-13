@@ -6,16 +6,12 @@
 // file       : start.jscad
 
 // Первый опыт построения 3D модели
+// https://en.wikibooks.org/wiki/OpenJSCAD_User_Guide
 
 function main() {
    return union(
-      difference(
-         cube({size: 3, center: true}),
-         sphere({r:2, center: true})
-      ),
-      intersection(
-          sphere({r: 1.3, center: true}),
-          cube({size: 2.1, center: true})
-      )
+
+         sphere({r:2, center: true, fn: 100 }).translate([0,0,2])
+
    ).translate([0,0,0]).scale(1);
 }
